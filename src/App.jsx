@@ -1,11 +1,5 @@
-import Button from '@mui/material/Button'
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
-import ThreeDRotation from '@mui/icons-material/ThreeDRotation';
-import HomeIcon from '@mui/icons-material/Home';
-import { pink } from '@mui/material/colors';
-import Typography from '@mui/material/Typography';
 import { useColorScheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+// import useMediaQuery from '@mui/material/useMediaQuery';
 // mode select
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -16,6 +10,7 @@ import Box from '@mui/material/Box';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import SettingsSystemDaydreamIcon from '@mui/icons-material/SettingsSystemDaydream';
+import { Container } from '@mui/material';
 function ModeSelect() {
   const { mode, setMode } = useColorScheme();
 
@@ -54,44 +49,38 @@ function ModeSelect() {
   );
 }
 function App() {
-  function ModeToggle() {
-    const { mode, setMode } = useColorScheme();
-    // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-    // const prefersLightMode = useMediaQuery('(prefers-color-scheme: light)');
-    // console.log(prefersDarkMode);
-    // console.log(prefersLightMode);
-    return (
-      <Button
-        onClick={() => {
-          setMode(mode === 'light' ? 'dark' : 'light');
-        }}
-      >
-        {mode === 'light' ? 'Turn dark' : 'Turn light'}
-      </Button>
-    );
-  }
   return (
     <>
-      <ModeSelect />
-      <hr />
-      <ModeToggle></ModeToggle>
-      <div className="">Trung Quân Dev</div>
-      <Typography variant="body2" color="text.secondary">tesstasdadsa</Typography>
-      <Button variant="contained">Hello world</Button>
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
+      <Container disableGutters maxWidth={false} sx={{ height: '100vh' }}>
+        <Box sx={{
+          backgroundColor: 'primary.light',
+          width: '100%',
+          height: (theme) => theme.trello.appBarHeight,
+          display: 'flex',
+          alignItems: 'center'
+        }}>
+          <ModeSelect />
+        </Box>
+        <Box sx={{
+          backgroundColor: 'primary.dark',
+          width: '100%',
+          height: (theme) => theme.trello.boardBarHeight,
+          display: 'flex',
+          alignItems: 'center'
+        }}>
+          Board Bar
+        </Box>
+        <Box sx={{
+          backgroundColor: 'primary.main',
+          display: 'flex',
+          height: (theme) => `calc(100vh - ${theme.trello.appBarHeight} - ${theme.trello.boardBarHeight})`,
+          alignItems: 'center',
+          width: '100%',
+        }}>
+          Board Content
 
-      <AccessAlarmIcon></AccessAlarmIcon>
-      <ThreeDRotation></ThreeDRotation>
-
-      <HomeIcon />
-      <HomeIcon color="primary" />
-      <HomeIcon color="secondary" />
-      <HomeIcon color="success" />
-      <HomeIcon color="action" />
-      <HomeIcon color="disabled" />
-      <HomeIcon sx={{ color: pink[500] }} />
+        </Box>
+      </Container>
     </>
   )
 }
