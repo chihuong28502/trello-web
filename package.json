@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "vite --host",
-    "formater":"prettier --single-quote --trailing-comma all --tab-width 4 --write 'src/**/*.{js,json,jsx}'",
+    "formatter":"prettier --single-quote --trailing-comma all --tab-width 4 --write 'src/**/*.{js,json,jsx}'",
+    "devFormat":"prettier --single-quote --trailing-comma all --tab-width 2 --write 'src/**/*.{js,json,jsx}'",
     "build": "vite build --base=./",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
