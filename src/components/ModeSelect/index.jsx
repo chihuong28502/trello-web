@@ -1,4 +1,3 @@
-import React from 'react'
 import { useColorScheme } from '@mui/material/styles';
 // import useMediaQuery from '@mui/material/useMediaQuery';
 // mode select
