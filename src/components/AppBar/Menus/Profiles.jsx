@@ -34,7 +34,7 @@ function Profiles() {
                     <Avatar
                         src="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/338697223_1516748275481535_6879214555229130855_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=9BnoygcArkUAX95-Bt-&_nc_ht=scontent.fhan14-4.fna&oh=00_AfDpgkMdxuTJFsVbtoQkP5g7dhIbut0D5Idr2oCzmtOBIQ&oe=6558B29F"
                         alt="ChiHuong28502"
-                        sx={{ width: 34, height: 34 }}
+                        sx={{ width: 36, height: 36 }}
                     />
                 </IconButton>
             </Tooltip>
